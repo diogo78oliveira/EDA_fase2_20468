@@ -8,7 +8,7 @@
 #pragma warning (disable: 4996)
 
 /**
- * @brief Estrutura para representar uma aresta na lista de adjac�ncia
+ * @brief Estrutura para representar uma aresta na lista de adjacencia
  */
 typedef struct Aresta {
     int origem;          /**< Valor do vertice de origem da aresta */
@@ -27,11 +27,11 @@ typedef struct No {
 } No;
 
 /**
- * @brief Estrutura para representar um grafo com listas de adjac�ncia
+ * @brief Estrutura para representar um grafo com listas de adjacencia
  */
 typedef struct Grafo {
     int num_vertices; /**< Numero de vertices no grafo */
-    No** lista_adj;   /**< Ponteiro para um array de ponteiros para n�s (lista de adjacencia) */
+    No** lista_adj;   /**< Ponteiro para um array de ponteiros para nos (lista de adjacencia) */
 } Grafo;
 
 
