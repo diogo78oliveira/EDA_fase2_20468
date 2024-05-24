@@ -5,7 +5,7 @@
 
 /**
  * @file bfs.h
- * @brief Definições e declarações para o algoritmo de busca em largura (BFS).
+ * @brief Definições e declarações para o algoritmo de pesquisa em largura (BFS).
  */
 
  /**

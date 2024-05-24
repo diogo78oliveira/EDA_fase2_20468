@@ -9,6 +9,8 @@
  *
  * @param capacidade Capacidade máxima da fila.
  * @return Ponteiro para a fila criada.
+ * 
+ * @autor Diogo Oliveira
  */
 Fila* criar_fila(unsigned capacidade) {
     Fila* fila = (Fila*)malloc(sizeof(Fila));
@@ -24,6 +26,8 @@ Fila* criar_fila(unsigned capacidade) {
  *
  * @param fila A fila a ser verificada.
  * @return Verdadeiro se a fila estiver cheia, falso caso contrário.
+ * 
+ * @autor Diogo Oliveira
  */
 bool fila_cheia(Fila* fila) {
     return (fila->tamanho == fila->capacidade);
@@ -34,16 +38,20 @@ bool fila_cheia(Fila* fila) {
  *
  * @param fila A fila a ser verificada.
  * @return Verdadeiro se a fila estiver vazia, falso caso contrário.
+ * 
+ * @autor Diogo Oliveira
  */
 bool fila_vazia(Fila* fila) {
     return (fila->tamanho == 0);
 }
 
 /**
- * @brief Adiciona um item à fila.
+ * @brief Adiciona um valor (valor do vertice) à fila.
  *
- * @param fila A fila onde o item será enfileirado.
- * @param item O item a ser enfileirado.
+ * @param fila A fila onde o valor será enfileirado.
+ * @param item O valor a ser enfileirado.
+ * 
+ * @autor Diogo Oliveira
  */
 bool enfileirar(Fila* fila, int item) {
     if (fila_cheia(fila)) {
@@ -55,10 +63,12 @@ bool enfileirar(Fila* fila, int item) {
 }
 
 /**
- * @brief Remove e retorna o item na frente da fila.
+ * @brief Remove e retorna o valor na frente da fila.
  *
- * @param fila A fila onde o item será removido.
- * @return O item removido da fila.
+ * @param fila A fila onde o valor será removido.
+ * @return O valor removido da fila.
+ * 
+ * @autor Diogo Oliveira
  */
 int desenfileirar(Fila* fila) {
     if (fila_vazia(fila)) {
@@ -73,9 +83,11 @@ int desenfileirar(Fila* fila) {
 /**
  * @brief Encontra o caminho mais curto entre dois vértices em um grafo usando BFS.
  *
- * @param grafo O grafo onde a busca será realizada.
+ * @param grafo O grafo onde a procura será realizada.
  * @param inicio O vértice de início do caminho.
  * @param destino O vértice de destino do caminho.
+ * 
+ * @autor Diogo Oliveira
  */
 bool bfs_caminho_mais_curto(Grafo* grafo, int inicio, int destino) {
     if (grafo == NULL || inicio >= grafo->num_vertices || destino >= grafo->num_vertices) {
@@ -153,10 +165,12 @@ bool bfs_caminho_mais_curto(Grafo* grafo, int inicio, int destino) {
 /**
  * @brief Calcula a soma dos valores dos vértices num dado caminho.
  *
- * @param grafo O grafo onde a busca será realizada.
+ * @param grafo O grafo onde a pesquisa será realizada.
  * @param inicio O vértice de início do caminho.
  * @param destino O vértice de destino do caminho.
  * @return A soma dos valores dos vértices no caminho, ou -1 se não existir caminho.
+ * 
+ * @autor Diogo Oliveira
  */
 int soma_valores_caminho(Grafo* grafo, int inicio, int destino) {
     if (grafo == NULL || inicio >= grafo->num_vertices || destino >= grafo->num_vertices) {

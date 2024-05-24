@@ -6,6 +6,8 @@
  * @brief Cria um novo grafo vazio
  *
  * @return Ponteiro para a estrutura de grafo criada
+ * 
+ * @autor Diogo Oliveira
  */
 Grafo* criar_grafo() {
     Grafo* grafo = (Grafo*)malloc(sizeof(Grafo));
@@ -22,6 +24,8 @@ Grafo* criar_grafo() {
  *
  * @param grafo Ponteiro para o grafo a ser destruido
  * @return true se o grafo foi destruido com sucesso, false caso controrio
+ * 
+ * @autor Diogo Oliveira
  */
 bool destruir_grafo(Grafo* grafo) {
     if (grafo == NULL) {
@@ -52,6 +56,8 @@ bool destruir_grafo(Grafo* grafo) {
  * @param grafo Ponteiro para o grafo
  * @param valor Valor do v�rtice a ser adicionado
  * @return true se o vertice foi adicionado com sucesso, false caso contrario
+ * 
+ * @autor Diogo Oliveira
  */
 bool adicionar_vertice(Grafo* grafo, int valor) {
     if (grafo == NULL) {
@@ -81,6 +87,8 @@ bool adicionar_vertice(Grafo* grafo, int valor) {
  * @param destino Valor do vertice de destino da aresta
  * @param valor Peso ou valor da aresta
  * @return true se a aresta foi adicionada com sucesso, false caso contrario
+ * 
+ * @autor Diogo Oliveira
  */
 bool adicionar_aresta(Grafo* grafo, int origem, int destino, int valor) {
     if (grafo == NULL || origem >= grafo->num_vertices || destino >= grafo->num_vertices) {
@@ -114,6 +122,8 @@ bool adicionar_aresta(Grafo* grafo, int origem, int destino, int valor) {
  * @brief Imprime a representa��o do grafo
  *
  * @param grafo Ponteiro para o grafo a ser impresso
+ * 
+ * @autor Diogo Oliveira
  */
 bool imprimir_grafo(Grafo* grafo) {
     if (grafo == NULL) {
@@ -132,13 +142,15 @@ bool imprimir_grafo(Grafo* grafo) {
 }
 
 /**
- * @brief Conecta os vertices na mesma linha, sem somar os valores dos vertices adjacentes
+ * @brief Conecta os vertices na mesma linha
  *
  * @param grafo Ponteiro para o grafo
  * @param matriz Matriz de valores dos vertices
  * @param linha indice da linha a ser processada
  * @param coluna indice da coluna do vertice de origem
  * @return true se os vertices foram conectados com sucesso, false caso contrario
+ * 
+ * @autor Diogo Oliveira
  */
 bool conectar_vertices_linha(Grafo* grafo, int matriz[5][5], int linha, int coluna) {
     if (grafo == NULL || linha >= 5 || coluna >= 5) {
@@ -162,6 +174,8 @@ bool conectar_vertices_linha(Grafo* grafo, int matriz[5][5], int linha, int colu
  * @param linha indice da linha do vertice de origem
  * @param coluna indice da coluna a ser processada
  * @return true se os vertices foram conectados com sucesso, false caso contrario
+ * 
+ * @autor Diogo Oliveira
  */
 bool conectar_vertices_coluna(Grafo* grafo, int matriz[5][5], int linha, int coluna) {
     if (grafo == NULL || linha >= 5 || coluna >= 5) {
@@ -183,6 +197,8 @@ bool conectar_vertices_coluna(Grafo* grafo, int matriz[5][5], int linha, int col
  * @param grafo Ponteiro para o grafo
  * @param valor Valor do vertice a ser removido
  * @return true se o vertice foi removido com sucesso, false caso contrario
+ * 
+ * @autor Diogo Oliveira
  */
 bool remover_vertice(Grafo* grafo, int valor) {
     if (grafo == NULL) {
@@ -228,6 +244,8 @@ bool remover_vertice(Grafo* grafo, int valor) {
  * @param origem Valor do vertice de origem da aresta
  * @param destino Valor do vertice de destino da aresta
  * @return true se a aresta foi removida com sucesso, false caso contrario
+ * 
+ * @autor Diogo Oliveira
  */
 bool remover_aresta(Grafo* grafo, int origem, int destino) {
     if (grafo == NULL || origem >= grafo->num_vertices || destino >= grafo->num_vertices) {
@@ -255,6 +273,15 @@ bool remover_aresta(Grafo* grafo, int origem, int destino) {
 }
 
 
+/**
+ * @brief Guarda o grafo em ficheiro binário
+ *
+ * @param grafo Ponteiro para o grafo
+ * @param nome_ficheiro
+ * @return true se foi guardado com sucesso, false caso contrario
+ * 
+ * @autor Diogo Oliveira
+ */
 bool guardar_grafo_binario(Grafo* grafo, const char* nome_ficheiro) {
     FILE* arquivo = fopen(nome_ficheiro, "wb");
     if (!arquivo) {
@@ -278,7 +305,6 @@ bool guardar_grafo_binario(Grafo* grafo, const char* nome_ficheiro) {
             fwrite(&aresta_atual->valor, sizeof(int), 1, arquivo);
             aresta_atual = aresta_atual->prox;
         }
-        // Marcador de fim de lista de arestas para o vértice atual
         int fim_lista = -1;
         fwrite(&fim_lista, sizeof(int), 1, arquivo);
     }

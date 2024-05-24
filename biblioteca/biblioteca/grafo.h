@@ -9,6 +9,8 @@
 
 /**
  * @brief Estrutura para representar uma aresta na lista de adjacencia
+ * 
+ * @autor Diogo Oliveira
  */
 typedef struct Aresta {
     int origem;          /**< Valor do vertice de origem da aresta */
@@ -19,6 +21,8 @@ typedef struct Aresta {
 
 /**
  * @brief Estrutura para representar um no (vertice) na lista de adjac�ncia
+ * 
+ * @autor Diogo Oliveira
  */
 typedef struct No {
     int valor;            /**< Valor do vertice */
@@ -28,6 +32,8 @@ typedef struct No {
 
 /**
  * @brief Estrutura para representar um grafo com listas de adjacencia
+ * 
+ * @autor Diogo Oliveira
  */
 typedef struct Grafo {
     int num_vertices; /**< Numero de vertices no grafo */
