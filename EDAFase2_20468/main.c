@@ -1,13 +1,26 @@
+/*******************************************************************************************************************
+* @file main.c
+* @author Diogo Oliveira (a20468@alunos.ipca.pt)
+* @brief main responsável para fazer a intereçao com o utilizador e a chamada das funçoes
+* @date maio 2024 *
+*
+* @copyright Copyright (c) 2024
+*
+*******************************************************************************************************************/
+
 #include <stdio.h>
 #include "grafo.h"
 #include "bfs.h"
 
 #pragma comment(lib,"biblioteca.lib")
 
+#pragma region main
+
 /**
  * @file main.c
  * @brief Programa principal para demonstrar a utilização das funções de BFS.
  */
+
 
 int main() {
     int valor;
@@ -64,3 +77,5 @@ int main() {
 
     return 0;
 }
+
+#pragma endregion

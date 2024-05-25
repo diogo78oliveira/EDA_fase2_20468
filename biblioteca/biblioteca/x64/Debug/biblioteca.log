@@ -1,8 +1,1 @@
-﻿  bfs.c
-C:\Users\diogo\Documents\GitHub\EDA_fase2_20468\biblioteca\biblioteca\bfs.c(50,9): warning C4033: 'enfileirar' deve retornar um valor
-  grafo.c
-  Gerando Código...
-C:\Users\diogo\Documents\GitHub\EDA_fase2_20468\biblioteca\biblioteca\grafo.c(132): warning C4715: 'imprimir_grafo': nem todos os caminhos de controle retornam um valor
-C:\Users\diogo\Documents\GitHub\EDA_fase2_20468\biblioteca\biblioteca\bfs.c(55): warning C4716: 'enfileirar': deve retornar um valor
-C:\Users\diogo\Documents\GitHub\EDA_fase2_20468\biblioteca\biblioteca\bfs.c(151): warning C4715: 'bfs_caminho_mais_curto': nem todos os caminhos de controle retornam um valor
-  biblioteca.vcxproj -> C:\Users\diogo\Documents\GitHub\EDA_fase2_20468\biblioteca\x64\Debug\biblioteca.lib
+﻿  biblioteca.vcxproj -> C:\Users\diogo\Documents\GitHub\EDA_fase2_20468\biblioteca\x64\Debug\biblioteca.lib

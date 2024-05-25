@@ -1,3 +1,12 @@
+/*******************************************************************************************************************
+* @file bfs.h
+* @author Diogo Oliveira (a20468@alunos.ipca.pt)
+* @brief header responsável pela definiçao de estruturas e declaraçao de funções
+* @date maio 2024 *
+*
+* @copyright Copyright (c) 2024
+*
+*******************************************************************************************************************/
 #ifndef BFS_H
 #define BFS_H
 

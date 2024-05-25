@@ -1,9 +1,26 @@
+/*******************************************************************************************************************
+* @file bfs.c
+* @autor Diogo Oliveira (a20468@alunos.ipca.pt)
+* @brief Implementação de funções para realizar a pesquisa em largura (BFS).
+* Este ficheiro contém a implementação das funções necessárias para realizar a pesquisa em largura (BFS) em um grafo.
+* Inclui as seguintes funcionalidades:
+* - Criação e manipulação de uma fila para a BFS
+* - Encontrar o caminho mais curto entre dois vértices em um grafo
+* - Calcular a soma dos valores dos vértices num caminho entre dois vértices
+* @date maio 2024
+*
+* @copyright Copyright (c) 2024
+*
+*******************************************************************************************************************/
+
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "grafo.h"
 #include "bfs.h"
 
+
+#pragma region Criar Fila
 /**
  * @brief Cria uma nova fila com a capacidade especificada.
  *
@@ -20,7 +37,10 @@ Fila* criar_fila(unsigned capacidade) {
     fila->itens = (int*)malloc(fila->capacidade * sizeof(int));
     return fila;
 }
+#pragma endregion
 
+
+#pragma region Fila Cheia
 /**
  * @brief Verifica se a fila está cheia.
  *
@@ -32,7 +52,10 @@ Fila* criar_fila(unsigned capacidade) {
 bool fila_cheia(Fila* fila) {
     return (fila->tamanho == fila->capacidade);
 }
+#pragma endregion
 
+
+#pragma region Fila Vazia
 /**
  * @brief Verifica se a fila está vazia.
  *
@@ -44,7 +67,10 @@ bool fila_cheia(Fila* fila) {
 bool fila_vazia(Fila* fila) {
     return (fila->tamanho == 0);
 }
+#pragma endregion
 
+
+#pragma region Enfileirar
 /**
  * @brief Adiciona um valor (valor do vertice) à fila.
  *
@@ -61,7 +87,10 @@ bool enfileirar(Fila* fila, int item) {
     fila->itens[fila->tras] = item;
     fila->tamanho = fila->tamanho + 1;
 }
+#pragma endregion
 
+
+#pragma region Desenfileirar
 /**
  * @brief Remove e retorna o valor na frente da fila.
  *
@@ -79,7 +108,10 @@ int desenfileirar(Fila* fila) {
     fila->tamanho = fila->tamanho - 1;
     return item;
 }
+#pragma endregion
 
+
+#pragma region Caminho Mais Curto
 /**
  * @brief Encontra o caminho mais curto entre dois vértices em um grafo usando BFS.
  *
@@ -161,7 +193,10 @@ bool bfs_caminho_mais_curto(Grafo* grafo, int inicio, int destino) {
     free(fila->itens);
     free(fila);
 }
+#pragma endregion
 
+
+#pragma region Soma Caminho
 /**
  * @brief Calcula a soma dos valores dos vértices num dado caminho.
  *
@@ -229,3 +264,5 @@ int soma_valores_caminho(Grafo* grafo, int inicio, int destino) {
 
     return soma;
 }
+
+#pragma endregion

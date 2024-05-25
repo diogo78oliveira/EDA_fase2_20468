@@ -1,7 +1,29 @@
-﻿#include <stdio.h>
+﻿/*******************************************************************************************************************
+* @file grafo.c
+* @brief Implementação de um grafo
+** @autor Diogo Oliveira (a20468@alunos.ipca.pt)
+* Este ficheiro contém a implementação de um grafo com as seguintes funcionalidades:
+* - Criação de um grafo vazio
+* - Destruição de um grafo, libertando toda a memória alocada
+* - Adição e remoção de vértices
+* - Adição e remoção de arestas
+* - Conexão de vértices na mesma linha ou coluna de uma matriz
+* - Impressão da representação do grafo
+* - Reservar o grafo num ficheiro binário
+* @date maio 2024
+*
+* @copyright Copyright (c) 2024
+*
+*******************************************************************************************************************/
+
+
+
+#include <stdio.h>
 #include <stdlib.h>
 #include "grafo.h"
 
+
+#pragma region Criar Grafo
 /**
  * @brief Cria um novo grafo vazio
  *
@@ -18,7 +40,10 @@ Grafo* criar_grafo() {
     grafo->lista_adj = NULL;
     return grafo;
 }
+#pragma endregion
 
+
+#pragma region Destruir Grafo
 /**
  * @brief Destroi um grafo, libertando toda a memoria alocada
  *
@@ -49,7 +74,10 @@ bool destruir_grafo(Grafo* grafo) {
     free(grafo);
     return true;
 }
+#pragma endregion
 
+
+#pragma region Adicionar Vertice
 /**
  * @brief Adiciona um novo vertice ao grafo
  *
@@ -78,7 +106,10 @@ bool adicionar_vertice(Grafo* grafo, int valor) {
     grafo->num_vertices++;
     return true;
 }
+#pragma endregion
 
+
+#pragma region Adicionar Aresta
 /**
  * @brief Adiciona uma nova aresta ao grafo
  *
@@ -117,7 +148,10 @@ bool adicionar_aresta(Grafo* grafo, int origem, int destino, int valor) {
     }
     return true;
 }
+#pragma endregion
 
+
+#pragma region Imprimir Grafo
 /**
  * @brief Imprime a representa��o do grafo
  *
@@ -140,7 +174,10 @@ bool imprimir_grafo(Grafo* grafo) {
         }
     }
 }
+#pragma endregion
 
+
+#pragma region Conectar Vertices Linha
 /**
  * @brief Conecta os vertices na mesma linha
  *
@@ -165,7 +202,10 @@ bool conectar_vertices_linha(Grafo* grafo, int matriz[5][5], int linha, int colu
     }
     return true;
 }
+#pragma endregion
 
+
+#pragma region Conectar Vertices Coluna
 /**
  * @brief Conecta os vertices na mesma coluna
  *
@@ -190,7 +230,10 @@ bool conectar_vertices_coluna(Grafo* grafo, int matriz[5][5], int linha, int col
     }
     return true;
 }
+#pragma endregion
 
+
+#pragma region Remover Vertice
 /**
  * @brief Remove um vertice do grafo
  *
@@ -236,7 +279,10 @@ bool remover_vertice(Grafo* grafo, int valor) {
     }
     return false;
 }
+#pragma endregion
 
+
+#pragma region Remover Aresta
 /**
  * @brief Remove uma aresta do grafo
  *
@@ -271,8 +317,10 @@ bool remover_aresta(Grafo* grafo, int origem, int destino) {
     }
     return false;
 }
+#pragma endregion
 
 
+#pragma region Guardar Grafo Binário
 /**
  * @brief Guarda o grafo em ficheiro binário
  *
@@ -313,3 +361,5 @@ bool guardar_grafo_binario(Grafo* grafo, const char* nome_ficheiro) {
     printf("Grafo guardado");
 
 }
+
+#pragma endregion
