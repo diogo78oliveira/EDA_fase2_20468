@@ -4,4 +4,5 @@ C:\Users\diogo\Documents\GitHub\EDA_fase2_20468\EDAFase2_20468\main.c(49,13): wa
 C:\Users\diogo\Documents\GitHub\EDA_fase2_20468\EDAFase2_20468\main.c(61,5): warning C4013: 'remover_vertice' indefinido; assumindo extern retornando int
 C:\Users\diogo\Documents\GitHub\EDA_fase2_20468\EDAFase2_20468\main.c(62,5): warning C4013: 'remover_aresta' indefinido; assumindo extern retornando int
 C:\Users\diogo\Documents\GitHub\EDA_fase2_20468\EDAFase2_20468\main.c(26,9): warning C4101: 'valor': variável local não referenciada
+  LINK : C:\Users\diogo\Documents\GitHub\EDA_fase2_20468\biblioteca\x64\Debug\EDAFase2_20468.exe não encontrado ou não compilado pelo o último link incremental; executando link completo
   EDAFase2_20468.vcxproj -> C:\Users\diogo\Documents\GitHub\EDA_fase2_20468\biblioteca\x64\Debug\EDAFase2_20468.exe
